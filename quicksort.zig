@@ -16,7 +16,7 @@ pub fn main() void {
 }
 
 fn quickSort(allocator: Allocator, arr: []u8) []u8 {
-    // print("Arr: {any}\n", .{arr});
+    print("Arr: {any}\n", .{arr});
     var left = std.ArrayList(u8).init(allocator);
     var right = std.ArrayList(u8).init(allocator);
     var result = std.ArrayList(u8).init(allocator);

@@ -35,7 +35,10 @@ fn search(allocator: Allocator, map: std.StringHashMap([][]const u8)) bool {
     const first = map.get("you") orelse return false;
     var queue = TailQueue{};
     appendNodes(allocator, &queue, first);
+    var searched = std.BufSet.init(allocator);
     while (queue.popFirst()) |tail| {
+        if (searched.contains(tail.data)) continue;
+        searched.insert(tail.data) catch @panic("Error while inserting");
         if (personIsSeller(tail.data)) {
             print("SELLER: {s}\n", .{tail.data});
             return true;

@@ -12,10 +12,10 @@ pub fn main() !void {
     var hashmap = std.StringHashMap([][]const u8).init(allocator);
     var neighboors = [_][]const u8{ "alice", "bob", "claire" };
     var bob_n = [_][]const u8{ "anuj", "peggy" };
-    var alice_n = [_][]const u8{"peggy"};
+    var alice_n = [_][]const u8{ "peggy", "axl" };
     var claire_n = [_][]const u8{ "thom", "jonny" };
     var anuj_n = [_][]const u8{};
-    var peggy_n = [_][]const u8{};
+    var peggy_n = [_][]const u8{"milo"};
     var thom_n = [_][]const u8{};
     var jonny_n = [_][]const u8{};
     try hashmap.put("you", &neighboors);
